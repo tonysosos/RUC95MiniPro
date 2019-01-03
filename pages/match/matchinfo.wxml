@@ -1,0 +1,72 @@
+<view class='page'>
+  <!--本周信息-->
+  <view class="page__hd">
+    <view class="page__title">本周比赛</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">时间</view>
+        <view class="weui-cell__ft">说明文字</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">地点</view>
+        <view class="weui-cell__ft">说明文字</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">对手</view>
+        <view class="weui-cell__ft">说明文字</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">队服</view>
+        <view class="weui-cell__ft">说明文字</view>
+      </view>
+    </view>
+  </view>
+  <!--按钮-->
+  <view style='display:flex'>
+    <button class="" type="primary" style='background-color: #cb242b' bindtap='signUp'>我要报名</button>
+    <button class="" type="primary" style='background-color: #cb242b' bindtap='askLeave'>我要请假</button>
+  </view>
+  <!--已报名 tab 已请假-->
+  <view>
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); background-color: #cb242b"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view wx:for="{{signedupList}}" class="weui-cell weui-cell_access">
+            <view class="weui-cell__hd">
+              <view>{{item.icon}}</view>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.name}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view wx:for="{{awayedList}}" class="weui-cell weui-cell_access">
+            <view class="weui-cell__hd">
+              <view>{{item.icon}}</view>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

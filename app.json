@@ -1,13 +1,47 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/match/matchinfo",
     "pages/logs/logs",
-    "pages/main/main"
+    "pages/main/main",
+    "pages/index/index"
   ],
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#cb242b",
+    "selectedColor": "#cb242b",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "",
+        "iconPath": "images/home-us.png",
+        "selectedIconPath": "images/home-s.png"
+      },
+      {
+        "pagePath": "pages/match/matchinfo",
+        "text": "",
+        "iconPath": "images/schedule-us.png",
+        "selectedIconPath": "images/schedule-s.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "images/stat-us.png",
+        "selectedIconPath": "images/stat-s.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "",
+        "iconPath": "images/user-us.png",
+        "selectedIconPath": "images/user-s.png"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "九五助手",
     "navigationBarTextStyle": "black"
   }
+  
 }

@@ -7,25 +7,25 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">时间</view>
-        <view class="weui-cell__ft">说明文字</view>
+        <view class="weui-cell__ft">{{matchinfo.matchtime}}</view>
       </view>
     </view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">地点</view>
-        <view class="weui-cell__ft">说明文字</view>
+        <view class="weui-cell__ft">{{matchinfo.location}}</view>
       </view>
     </view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">对手</view>
-        <view class="weui-cell__ft">说明文字</view>
+        <view class="weui-cell__ft">{{matchinfo.opponent}}</view>
       </view>
     </view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">队服</view>
-        <view class="weui-cell__ft">说明文字</view>
+        <view class="weui-cell__ft">{{jersey[matchinfo.jersey]}}</view>
       </view>
     </view>
   </view>

@@ -1,5 +1,6 @@
 // pages/match/matchinfo.js
 var sliderWidth = 96;
+var app = getApp()
 
 Page({
 
@@ -7,6 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    jersey: {1: '红色', 2:'蓝色'},
+    matchinfo: {},
+    matchid: 1,
     tabs: ["已报名", "已请假"],
     activeIndex: 0,
     sliderOffset: 0,
@@ -39,6 +43,7 @@ Page({
       }
     });
   },
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
@@ -65,7 +70,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log("onShow")
+    var that = this
+    app.requestApiHost('api/match/' + this.data.matchid, '', 'GET',
+      function (res) {
+        that.setData({ matchinfo: res })
+        console.log("res", res)
+        console.log("matchinfo", that.data.matchinfo)
+      })
   },
 
   /**

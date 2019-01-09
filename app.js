@@ -35,5 +35,29 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  requestApiHost: function (opName, para, method, func_succ, func_fail, func_comp) {
+    console.log("request")
+    var url = 'http://localhost:8090/' + opName
+    wx.request({
+      url: url,
+      data: para,
+      method: method,
+      success: function (res) {
+        if (typeof (func_succ) == 'function') {
+          func_succ(res.data)
+        }
+      },
+      fail: function (res) {
+        if (typeof (func_fail) == 'function') {
+          func_fail(res)
+        }
+      },
+      complete: function (res) {
+        if (typeof (func_comp) == 'function') {
+          func_comp(res)
+        }
+      }
+    })
   }
 })
